@@ -1,0 +1,46 @@
+{
+    "$schema": "https://tsgf.iclouden.com/schema/tsgf.server.config.schema-v2-cn.json",
+    "redisConfig": {
+        "host": "127.0.0.1",
+        "port": 6379,
+        "database": 6
+    },
+    "gameServer": {
+        "clusterWSUrl": "ws://127.0.0.1:7101/",
+        "clusterNodeId": "limit1",
+        "clusterKey": "游戏服务器节点密钥1",
+        "serverName": "limit1",
+        "serverUrl": "ws://127.0.0.1:7801/game/",
+        "port": 7801,
+        "allotRules": {
+            "limitRoomCountRules": [
+                {
+                    "roomType": "Plaza",
+                    "limitRoomCount": 1
+                },
+                {
+                    "roomType": "Hall",
+                    "limitRoomCount": 2
+                },
+                {
+                    "roomType": "MeetingRoom",
+                    "maxPlayers": 10,
+                    "limitRoomCount": 2
+                },
+                {
+                    "roomType": "MeetingRoom",
+                    "maxPlayers": 20,
+                    "limitRoomCount": 2
+                },
+                {
+                    "roomType": "MeetingRoom",
+                    "maxPlayers": 50,
+                    "limitRoomCount": 1
+                }
+            ]
+        }
+    },
+    "runServer": [
+        "GameServer"
+    ]
+}

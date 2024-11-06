@@ -1,0 +1,436 @@
+{
+    "type": "object",
+    "$defs": {
+        "serverCfg": {
+            "type": "object",
+            "properties": {
+                "port": {
+                    "type": "number",
+                    "description": "侦听端口号"
+                }
+            },
+            "required": [
+                "port"
+            ]
+        },
+        "serverNode": {
+            "type": "object",
+            "properties": {
+                "clusterNodeId": {
+                    "type": "string",
+                    "description": "集群节点ID（也可以视为服务器ID），集群内唯一，和该服务器启动实例配置文件中一致"
+                },
+                "clusterKey": {
+                    "type": "string",
+                    "description": "加入集群的密钥，必须和该服务器启动实例配置文件中一致"
+                }
+            },
+            "required": [
+                "clusterNodeId",
+                "clusterKey"
+            ]
+        },
+        "serverNodeList": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/serverNode"
+            }
+        },
+        "clusterNode": {
+            "type": "object",
+            "properties": {
+                "clusterWSUrl": {
+                    "type": "string",
+                    "description": "集群的内网连接地址"
+                },
+                "clusterNodeId": {
+                    "type": "string",
+                    "description": "集群节点ID（也可以视为服务器ID），集群内唯一，和该服务器启动实例配置文件中一致"
+                },
+                "clusterKey": {
+                    "type": "string",
+                    "description": "加入集群的密钥，必须和该服务器启动实例配置文件中一致"
+                }
+            },
+            "required": [
+                "clusterWSUrl",
+                "clusterNodeId",
+                "clusterKey"
+            ]
+        },
+        "terminal": {
+            "type": "object",
+            "properties": {
+                "terminalId": {
+                    "type": "string",
+                    "description": "连接集群的终端id，需要和使用终端位置的配置一致"
+                },
+                "terminalKey": {
+                    "type": "string",
+                    "description": "连接集群的终端密钥，需要和使用终端位置的配置一致"
+                }
+            },
+            "required": [
+                "clusterNodeId",
+                "clusterKey"
+            ]
+        },
+        "terminalList": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/terminal"
+            }
+        }
+    },
+    "required": [
+        "redisConfig",
+        "runServer"
+    ],
+    "properties": {
+        "redisConfig": {
+            "type": "object",
+            "description": "连接redis服务器的配置，如果任何一个服务有需要，则需要配置",
+            "properties": {
+                "ssl": {
+                    "type": "boolean",
+                    "description": "是否启用SSL"
+                },
+                "host": {
+                    "type": "string",
+                    "description": "服务器地址（IP或者域名）"
+                },
+                "port": {
+                    "type": "number",
+                    "description": "服务器端口"
+                },
+                "username": {
+                    "type": "string",
+                    "description": "如果有开启认证，则需要配置用户名和密码"
+                },
+                "password": {
+                    "type": "string",
+                    "description": "如果有开启认证，则需要配置用户名和密码"
+                },
+                "database": {
+                    "type": "number",
+                    "description": "使用的redis的数据库，从0开始"
+                },
+                "useMemRedis": {
+                    "type": "boolean",
+                    "description": "使用单机内存来简单实现，免去简单场景依赖redis的情况"
+                }
+            }
+        },
+        "connString": {
+            "type": "object",
+            "description": "配置数据库的连接字符串，如果任何一个服务有需要，则需要配置",
+            "properties": {
+                "appDb": {
+                    "type": "object",
+                    "description": "开放平台应用库，目前直接使用mysql库",
+                    "properties": {
+                        "mysql": {
+                            "type": "string",
+                            "description": "连接mysql的连接字符串，可参考地址：https://www.npmjs.com/package/mysql#connection-options"
+                        }
+                    }
+                }
+            }
+        },
+        "gameServerCluster": {
+            "description": "游戏服务集群配置，如果runServer中有配置 GameServerCluster 则需要配置本节点",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/serverCfg"
+                },
+                {
+                    "properties": {
+                        "nodeList": {
+                            "$ref": "#/$defs/serverNodeList",
+                            "description": "管理的集群节点列表，需要配置在这里才能成功登录集群"
+                        },
+                        "terminalList":{
+                            "$ref": "#/$defs/terminalList",
+                            "description": "允许连接到集群的终端列表"
+                        }
+                    }
+                }
+            ]
+        },
+        "matchServerCluster": {
+            "description": "匹配服务集群配置，如果runServer中有配置 MatchServerCluster 则需要配置本节点",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/serverCfg"
+                },
+                {
+                    "properties": {
+                        "nodeList": {
+                            "$ref": "#/$defs/serverNodeList",
+                            "description": "管理的集群节点列表，需要配置在这里才能成功登录集群"
+                        }
+                    }
+                }
+            ]
+        },
+        "hallServer": {
+            "$ref": "#/$defs/serverCfg",
+            "description": "大厅服务配置，如果runServer中有配置 HallServer 则需要配置本节点",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/serverCfg"
+                },
+                {
+                    "properties": {
+                        "gameClusterServerUrl": {
+                            "type": "string",
+                            "description": "连接的游戏集群url"
+                        },
+                        "gameClusterTerminalId": {
+                            "type": "string",
+                            "description": "连接游戏集群使用的终端id"
+                        },
+                        "gameClusterTerminalKey": {
+                            "type": "string",
+                            "description": "连接游戏集群使用的终端秘钥"
+                        }
+                    }
+                }
+            ]
+        },
+        "gameServer": {
+            "description": "游戏服务器，如果runServer中有配置 GameServer 则需要配置本节点",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/serverCfg"
+                },
+                {
+                    "$ref": "#/$defs/clusterNode"
+                },
+                {
+                    "properties": {
+                        "serverName": {
+                            "type": "string",
+                            "description": "服务器名称"
+                        },
+                        "serverUrl": {
+                            "type": "string",
+                            "description": "服务器外网连接地址"
+                        },
+                        "extendData": {
+                            "type": "object",
+                            "description": "拓展数据,不同的服务器不同的版本各不相同,将输出给获取服务器列表的客户端"
+                        },
+                        "allotRules": {
+                            "type": "object",
+                            "description": "游戏服务器分配规则配置",
+                            "properties": {
+                                "limitRoomCountRules": {
+                                    "type": "object",
+                                    "description": "限制房间数量的规则列表, 有配置则会判断符合的取数量最小的限制值",
+                                    "properties": {
+                                        "roomType": {
+                                            "type": "string",
+                                            "description": "当前配置限制的房间类型, 放空表示当前配置不限制房间类型"
+                                        },
+                                        "maxPlayers": {
+                                            "type": "number",
+                                            "description": "当前配置限制的房间最大玩家数,放空表示当前配置不限制房间的最大玩家数"
+                                        },
+                                        "limitRoomCount": {
+                                            "type": "number",
+                                            "description": "当前配置的房间数限额"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "matchServer": {
+            "description": "匹配服务器，如果runServer中有配置 MatchServer 则需要配置本节点",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/clusterNode"
+                },
+                {
+                    "properties": {
+                        "serverName": {
+                            "type": "string",
+                            "description": "服务器名称"
+                        },
+                        "gameClusterServerUrl": {
+                            "type": "string",
+                            "description": "连接的游戏集群url"
+                        },
+                        "gameClusterTerminalId": {
+                            "type": "string",
+                            "description": "连接游戏集群使用的终端id"
+                        },
+                        "gameClusterTerminalKey": {
+                            "type": "string",
+                            "description": "连接游戏集群使用的终端秘钥"
+                        }
+                    }
+                }
+            ]
+        },
+        "demoServer": {
+            "description": "示例应用的用户系统接入服务，如果runServer中有配置 DemoServer 则需要配置本节点",
+            "allOf": [
+                {
+                    "$ref": "#/$defs/serverCfg"
+                },
+                {
+                    "properties": {
+                        "hallServerUrl": {
+                            "type": "string",
+                            "description": "所连的大厅服务器地址"
+                        }
+                    }
+                }
+            ]
+        },
+        "runServer": {
+            "type": "array",
+            "description": "当前实例要启动的服务，如: HallServer, GameServerCluster, MatchServerCluster",
+            "additionalItems": false,
+            "items": {
+                "type": "string",
+                "oneOf": [
+                    {
+                        "type": "string",
+                        "const": "HallServer",
+                        "description": "大厅服务器, 必须配置hallServer节点"
+                    },
+                    {
+                        "type": "string",
+                        "const": "GameServerCluster",
+                        "description": "游戏服务集群, 必须配置 gameServerCluster 节点"
+                    },
+                    {
+                        "type": "string",
+                        "const": "MatchServerCluster",
+                        "description": "匹配服务集群, 必须配置 matchServerCluster 节点"
+                    },
+                    {
+                        "type": "string",
+                        "const": "GameServer",
+                        "description": "游戏服务, 必须配置 gameServer 节点"
+                    },
+                    {
+                        "type": "string",
+                        "const": "MatchServer",
+                        "description": "匹配服务, 必须配置 matchServer 节点"
+                    },
+                    {
+                        "type": "string",
+                        "const": "DemoServer",
+                        "description": "示例应用的用户系统接入服务, 必须配置 demoServer 节点"
+                    }
+                ]
+            },
+            "uniqueItems": true
+        }
+    },
+    "allOf": [
+        {
+            "if": {
+                "properties": {
+                    "runServer": {
+                        "contains": {
+                            "const": "GameServerCluster"
+                        }
+                    }
+                }
+            },
+            "then": {
+                "required": [
+                    "gameServerCluster"
+                ]
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "runServer": {
+                        "contains": {
+                            "const": "MatchServerCluster"
+                        }
+                    }
+                }
+            },
+            "then": {
+                "required": [
+                    "matchServerCluster"
+                ]
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "runServer": {
+                        "contains": {
+                            "const": "HallServer"
+                        }
+                    }
+                }
+            },
+            "then": {
+                "required": [
+                    "hallServer"
+                ]
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "runServer": {
+                        "contains": {
+                            "const": "GameServer"
+                        }
+                    }
+                }
+            },
+            "then": {
+                "required": [
+                    "gameServer"
+                ]
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "runServer": {
+                        "contains": {
+                            "const": "MatchServer"
+                        }
+                    }
+                }
+            },
+            "then": {
+                "required": [
+                    "matchServer"
+                ]
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "runServer": {
+                        "contains": {
+                            "const": "DemoServer"
+                        }
+                    }
+                }
+            },
+            "then": {
+                "required": [
+                    "demoServer"
+                ]
+            }
+        }
+    ]
+}

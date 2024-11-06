@@ -1,0 +1,6 @@
+
+/.VSCodeCounter
+/sdk-base/coverage
+/tsgf-sdk-browser/temp
+package-lock.json
+/node_modules

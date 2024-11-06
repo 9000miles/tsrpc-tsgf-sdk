@@ -1,0 +1,76 @@
+{
+    "$schema": "https://tsgf.iclouden.com/schema/tsgf.server.config.schema-v2-cn.json",
+    "redisConfig": {
+        "useMemRedis": true
+    },
+    "gameServerCluster": {
+        "port": 7101,
+        "nodeList": [
+            {
+                "clusterNodeId": "allinone",
+                "clusterKey": "游戏服务器节点密钥"
+            },
+            {
+                "clusterNodeId": "limit1",
+                "clusterKey": "游戏服务器节点密钥1"
+            }
+        ],
+        "terminalList": [
+            {
+                "terminalId": "hallServer",
+                "terminalKey": "大厅服务器连接的终端密钥"
+            },
+            {
+                "terminalId": "matchServer",
+                "terminalKey": "匹配服务器连接的终端密钥"
+            }
+        ]
+    },
+    "matchServerCluster": {
+        "port": 7102,
+        "nodeList": [
+            {
+                "clusterNodeId": "match1",
+                "clusterKey": "匹配服务器节点密钥"
+            }
+        ]
+    },
+    "hallServer": {
+        "port": 7100,
+        "gameClusterServerUrl": "ws://127.0.0.1:7101/",
+        "gameClusterTerminalId": "hallServer",
+        "gameClusterTerminalKey": "大厅服务器连接的终端密钥"
+    },
+    "gameServer": {
+        "clusterWSUrl": "ws://127.0.0.1:7101/",
+        "clusterNodeId": "allinone",
+        "clusterKey": "游戏服务器节点密钥",
+        "serverName": "allinone",
+        "serverUrl": "wss://tsgf-gamesv.iclouden.com/",
+        "extendData": {
+            "Hot": 1
+        },
+        "port": 7801
+    },
+    "matchServer": {
+        "clusterWSUrl": "ws://127.0.0.1:7102/",
+        "clusterNodeId": "match1",
+        "clusterKey": "匹配服务器节点密钥",
+        "serverName": "匹配处理1",
+        "gameClusterServerUrl": "ws://127.0.0.1:7101/",
+        "gameClusterTerminalId": "matchServer",
+        "gameClusterTerminalKey": "匹配服务器连接的终端密钥"
+    },
+    "demoServer": {
+        "port": 7901,
+        "hallServerUrl": "http://127.0.0.1:7100/"
+    },
+    "runServer": [
+        "HallServer",
+        "GameServerCluster",
+        "MatchServerCluster",
+        "GameServer",
+        "MatchServer",
+        "DemoServer"
+    ]
+}

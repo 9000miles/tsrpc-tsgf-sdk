@@ -1,0 +1,2310 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "TSRPC Open API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/Authorize": {
+      "post": {
+        "operationId": "Authorize",
+        "requestBody": {
+          "description": "Req<Authorize>",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PtlAuthorize_ReqAuthorize"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "ApiReturn<ResAuthorize>",
+                  "properties": {
+                    "isSucc": {
+                      "type": "boolean",
+                      "enum": [
+                        true
+                      ],
+                      "default": true
+                    },
+                    "res": {
+                      "$ref": "#/components/schemas/PtlAuthorize_ResAuthorize"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/CancelMatch": {
+      "post": {
+        "operationId": "CancelMatch",
+        "requestBody": {
+          "description": "Req<CancelMatch>",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PtlCancelMatch_ReqCancelMatch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "ApiReturn<ResCancelMatch>",
+                  "properties": {
+                    "isSucc": {
+                      "type": "boolean",
+                      "enum": [
+                        true
+                      ],
+                      "default": true
+                    },
+                    "res": {
+                      "$ref": "#/components/schemas/PtlCancelMatch_ResCancelMatch"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/ChangeCustomPlayerProfile": {
+      "post": {
+        "operationId": "ChangeCustomPlayerProfile",
+        "requestBody": {
+          "description": "Req<ChangeCustomPlayerProfile>",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PtlChangeCustomPlayerProfile_ReqChangeCustomPlayerProfile"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "ApiReturn<ResChangeCustomPlayerProfile>",
+                  "properties": {
+                    "isSucc": {
+                      "type": "boolean",
+                      "enum": [
+                        true
+                      ],
+                      "default": true
+                    },
+                    "res": {
+                      "$ref": "#/components/schemas/PtlChangeCustomPlayerProfile_ResChangeCustomPlayerProfile"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/ChangeCustomPlayerStatus": {
+      "post": {
+        "operationId": "ChangeCustomPlayerStatus",
+        "requestBody": {
+          "description": "Req<ChangeCustomPlayerStatus>",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PtlChangeCustomPlayerStatus_ReqChangeCustomPlayerStatus"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "ApiReturn<ResChangeCustomPlayerStatus>",
+                  "properties": {
+                    "isSucc": {
+                      "type": "boolean",
+                      "enum": [
+                        true
+                      ],
+                      "default": true
+                    },
+                    "res": {
+                      "$ref": "#/components/schemas/PtlChangeCustomPlayerStatus_ResChangeCustomPlayerStatus"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/ChangePlayerTeam": {
+      "post": {
+        "operationId": "ChangePlayerTeam",
+        "requestBody": {
+          "description": "Req<ChangePlayerTeam>",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PtlChangePlayerTeam_ReqChangePlayerTeam"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "ApiReturn<ResChangePlayerTeam>",
+                  "properties": {
+                    "isSucc": {
+                      "type": "boolean",
+                      "enum": [
+                        true
+                      ],
+                      "default": true
+                    },
+                    "res": {
+                      "$ref": "#/components/schemas/PtlChangePlayerTeam_ResChangePlayerTeam"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/ChangeRoom": {
+      "post": {
+        "operationId": "ChangeRoom",
+        "requestBody": {
+          "description": "Req<ChangeRoom>",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PtlChangeRoom_ReqChangeRoom"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "ApiReturn<ResChangeRoom>",
+                  "properties": {
+                    "isSucc": {
+                      "type": "boolean",
+                      "enum": [
+                        true
+                      ],
+                      "default": true
+                    },
+                    "res": {
+                      "$ref": "#/components/schemas/PtlChangeRoom_ResChangeRoom"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/CreateRoomRobot": {
+      "post": {
+        "operationId": "CreateRoomRobot",
+        "requestBody": {
+          "description": "Req<CreateRoomRobot>",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PtlCreateRoomRobot_ReqCreateRoomRobot"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "ApiReturn<ResCreateRoomRobot>",
+                  "properties": {
+                    "isSucc": {
+                      "type": "boolean",
+                      "enum": [
+                        true
+                      ],
+                      "default": true
+                    },
+                    "res": {
+                      "$ref": "#/components/schemas/PtlCreateRoomRobot_ResCreateRoomRobot"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/DismissRoom": {
+      "post": {
+        "operationId": "DismissRoom",
+        "requestBody": {
+          "description": "Req<DismissRoom>",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PtlDismissRoom_ReqDismissRoom"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "ApiReturn<ResDismissRoom>",
+                  "properties": {
+                    "isSucc": {
+                      "type": "boolean",
+                      "enum": [
+                        true
+                      ],
+                      "default": true
+                    },
+                    "res": {
+                      "$ref": "#/components/schemas/PtlDismissRoom_ResDismissRoom"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/JoinRoom": {
+      "post": {
+        "operationId": "JoinRoom",
+        "requestBody": {
+          "description": "Req<JoinRoom>",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PtlJoinRoom_ReqJoinRoom"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "ApiReturn<ResJoinRoom>",
+                  "properties": {
+                    "isSucc": {
+                      "type": "boolean",
+                      "enum": [
+                        true
+                      ],
+                      "default": true
+                    },
+                    "res": {
+                      "$ref": "#/components/schemas/PtlJoinRoom_ResJoinRoom"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/LeaveRoom": {
+      "post": {
+        "operationId": "LeaveRoom",
+        "requestBody": {
+          "description": "Req<LeaveRoom>",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PtlLeaveRoom_ReqLeaveRoom"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "ApiReturn<ResLeaveRoom>",
+                  "properties": {
+                    "isSucc": {
+                      "type": "boolean",
+                      "enum": [
+                        true
+                      ],
+                      "default": true
+                    },
+                    "res": {
+                      "$ref": "#/components/schemas/PtlLeaveRoom_ResLeaveRoom"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/QueryMatch": {
+      "post": {
+        "operationId": "QueryMatch",
+        "requestBody": {
+          "description": "Req<QueryMatch>",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PtlQueryMatch_ReqQueryMatch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "ApiReturn<ResQueryMatch>",
+                  "properties": {
+                    "isSucc": {
+                      "type": "boolean",
+                      "enum": [
+                        true
+                      ],
+                      "default": true
+                    },
+                    "res": {
+                      "$ref": "#/components/schemas/PtlQueryMatch_ResQueryMatch"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/Reconnect": {
+      "post": {
+        "operationId": "Reconnect",
+        "requestBody": {
+          "description": "Req<Reconnect>",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PtlReconnect_ReqReconnect"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "ApiReturn<ResReconnect>",
+                  "properties": {
+                    "isSucc": {
+                      "type": "boolean",
+                      "enum": [
+                        true
+                      ],
+                      "default": true
+                    },
+                    "res": {
+                      "$ref": "#/components/schemas/PtlReconnect_ResReconnect"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/RequestAfterFrames": {
+      "post": {
+        "operationId": "RequestAfterFrames",
+        "requestBody": {
+          "description": "Req<RequestAfterFrames>",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PtlRequestAfterFrames_ReqRequestAfterFrames"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "ApiReturn<ResRequestAfterFrames>",
+                  "properties": {
+                    "isSucc": {
+                      "type": "boolean",
+                      "enum": [
+                        true
+                      ],
+                      "default": true
+                    },
+                    "res": {
+                      "$ref": "#/components/schemas/PtlRequestAfterFrames_ResRequestAfterFrames"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/RequestFrames": {
+      "post": {
+        "operationId": "RequestFrames",
+        "requestBody": {
+          "description": "Req<RequestFrames>",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PtlRequestFrames_ReqRequestFrames"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "ApiReturn<ResRequestFrames>",
+                  "properties": {
+                    "isSucc": {
+                      "type": "boolean",
+                      "enum": [
+                        true
+                      ],
+                      "default": true
+                    },
+                    "res": {
+                      "$ref": "#/components/schemas/PtlRequestFrames_ResRequestFrames"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/RequestMatch": {
+      "post": {
+        "operationId": "RequestMatch",
+        "requestBody": {
+          "description": "Req<RequestMatch>",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PtlRequestMatch_ReqRequestMatch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "ApiReturn<ResRequestMatch>",
+                  "properties": {
+                    "isSucc": {
+                      "type": "boolean",
+                      "enum": [
+                        true
+                      ],
+                      "default": true
+                    },
+                    "res": {
+                      "$ref": "#/components/schemas/PtlRequestMatch_ResRequestMatch"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/RoomRobotLeave": {
+      "post": {
+        "operationId": "RoomRobotLeave",
+        "requestBody": {
+          "description": "Req<RoomRobotLeave>",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PtlRoomRobotLeave_ReqRoomRobotLeave"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "ApiReturn<ResRoomRobotLeave>",
+                  "properties": {
+                    "isSucc": {
+                      "type": "boolean",
+                      "enum": [
+                        true
+                      ],
+                      "default": true
+                    },
+                    "res": {
+                      "$ref": "#/components/schemas/PtlRoomRobotLeave_ResRoomRobotLeave"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/SendRoomMsg": {
+      "post": {
+        "operationId": "SendRoomMsg",
+        "requestBody": {
+          "description": "Req<SendRoomMsg>",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PtlSendRoomMsg_ReqSendRoomMsg"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "ApiReturn<ResSendRoomMsg>",
+                  "properties": {
+                    "isSucc": {
+                      "type": "boolean",
+                      "enum": [
+                        true
+                      ],
+                      "default": true
+                    },
+                    "res": {
+                      "$ref": "#/components/schemas/PtlSendRoomMsg_ResSendRoomMsg"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/StartFrameSync": {
+      "post": {
+        "operationId": "StartFrameSync",
+        "requestBody": {
+          "description": "Req<StartFrameSync>",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PtlStartFrameSync_ReqStartFrameSync"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "ApiReturn<ResStartFrameSync>",
+                  "properties": {
+                    "isSucc": {
+                      "type": "boolean",
+                      "enum": [
+                        true
+                      ],
+                      "default": true
+                    },
+                    "res": {
+                      "$ref": "#/components/schemas/PtlStartFrameSync_ResStartFrameSync"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/StopFrameSync": {
+      "post": {
+        "operationId": "StopFrameSync",
+        "requestBody": {
+          "description": "Req<StopFrameSync>",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PtlStopFrameSync_ReqStopFrameSync"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "ApiReturn<ResStopFrameSync>",
+                  "properties": {
+                    "isSucc": {
+                      "type": "boolean",
+                      "enum": [
+                        true
+                      ],
+                      "default": true
+                    },
+                    "res": {
+                      "$ref": "#/components/schemas/PtlStopFrameSync_ResStopFrameSync"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "MsgDisconnect_MsgDisconnect": {
+        "type": "object",
+        "properties": {},
+        "description": "主动告知断开"
+      },
+      "MsgNotifyChangeCustomPlayerProfile_MsgNotifyChangeCustomPlayerProfile": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/______tsgf_player_IPlayerInfo_IChangeCustomPlayerProfile"
+          },
+          {
+            "type": "object",
+            "properties": {}
+          }
+        ]
+      },
+      "______tsgf_player_IPlayerInfo_IChangeCustomPlayerProfile": {
+        "type": "object",
+        "properties": {
+          "changePlayerId": {
+            "type": "string"
+          },
+          "customPlayerProfile": {
+            "type": "string"
+          },
+          "oldCustomPlayerProfile": {
+            "type": "string"
+          },
+          "roomInfo": {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomInfo_IRoomInfo"
+          }
+        },
+        "required": [
+          "changePlayerId",
+          "customPlayerProfile",
+          "oldCustomPlayerProfile",
+          "roomInfo"
+        ],
+        "description": "玩家自定义信息的变更信息"
+      },
+      "______tsgf_room_IRoomInfo_IRoomInfo": {
+        "type": "object",
+        "properties": {
+          "roomId": {
+            "type": "string",
+            "description": "房间ID"
+          },
+          "roomName": {
+            "type": "string",
+            "description": "房间名称"
+          },
+          "ownerPlayerId": {
+            "type": "string",
+            "description": "房主玩家ID，创建后，只有房主玩家的客户端才可以调用相关的管理操作"
+          },
+          "isPrivate": {
+            "type": "boolean",
+            "description": "是否私有房间，即不参与匹配, 但可以通过房间ID加入"
+          },
+          "isForbidJoin": {
+            "type": "boolean",
+            "description": "是否不允许加人(任何方式都无法加入)"
+          },
+          "matcherKey": {
+            "type": "string",
+            "description": "如果参与匹配,则使用的匹配器标识"
+          },
+          "createType": {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomInfo_ERoomCreateType",
+            "description": "创建房间的方式"
+          },
+          "maxPlayers": {
+            "type": "number",
+            "description": "进入房间的最大玩家数量"
+          },
+          "roomType": {
+            "type": "string",
+            "description": "房间类型自定义字符串"
+          },
+          "customProperties": {
+            "type": "string",
+            "description": "自定义房间属性字符串"
+          },
+          "allPlayerMatchReqId": {
+            "type": "string",
+            "description": "如果当前房间在匹配 (房间全玩家匹配),则有匹配请求id"
+          },
+          "playerList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/______tsgf_player_IPlayerInfo_IPlayerInfo"
+            },
+            "description": "玩家列表"
+          },
+          "teamList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/______tsgf_room_IRoomInfo_ITeamInfo"
+            },
+            "description": "队伍列表,如果创建房间时有传入队伍参数,则会有内容,否则为[]"
+          },
+          "fixedTeamCount": {
+            "type": "number",
+            "description": "[固定数量的队伍] 直接用数量自动生成所有固定队伍配置, 房间ID将从 '1' 开始到 fixedTeamCount,\n还需要传 fixedTeamMinPlayers 和 fixedTeamMaxPlayers, 或者使用 fixedTeamInfoList 完全自定义"
+          },
+          "freeTeamMinPlayers": {
+            "type": "number",
+            "description": "[自由数量的队伍] 指定每支队伍的最少玩家数, 同时还需要指定 freeTeamMaxPlayers"
+          },
+          "freeTeamMaxPlayers": {
+            "type": "number",
+            "description": "[自由数量的队伍] 指定每支队伍的最大玩家数, 同时还需要指定 freeTeamMinPlayers"
+          },
+          "frameRate": {
+            "type": "number",
+            "description": "同步帧率"
+          },
+          "frameSyncState": {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomInfo_EFrameSyncState",
+            "description": "帧同步状态"
+          },
+          "createTime": {
+            "type": "number",
+            "description": "创建房间时间戳（单位毫秒， new Date(createTime) 可获得时间对象）"
+          },
+          "startGameTime": {
+            "type": "number",
+            "description": "开始游戏时间戳（单位毫秒， new Date(createTime) 可获得时间对象）,0表示未开始"
+          }
+        },
+        "required": [
+          "roomId",
+          "roomName",
+          "ownerPlayerId",
+          "isPrivate",
+          "isForbidJoin",
+          "createType",
+          "maxPlayers",
+          "playerList",
+          "teamList",
+          "frameRate",
+          "frameSyncState",
+          "createTime",
+          "startGameTime"
+        ],
+        "description": "房间信息"
+      },
+      "______tsgf_room_IRoomInfo_ERoomCreateType": {
+        "type": "number",
+        "enum": [
+          0,
+          1
+        ],
+        "description": "创建房间的方式"
+      },
+      "______tsgf_player_IPlayerInfo_IPlayerInfo": {
+        "type": "object",
+        "properties": {
+          "playerId": {
+            "type": "string",
+            "description": "玩家ID"
+          },
+          "showName": {
+            "type": "string",
+            "description": "显示名"
+          },
+          "teamId": {
+            "type": "string",
+            "description": "当前房间中所在的队伍id"
+          },
+          "customPlayerStatus": {
+            "type": "number",
+            "description": "自定义玩家状态"
+          },
+          "customPlayerProfile": {
+            "type": "string",
+            "description": "自定义玩家信息"
+          },
+          "networkState": {
+            "$ref": "#/components/schemas/______tsgf_player_IPlayerInfo_ENetworkState",
+            "description": "网络状态"
+          },
+          "isRobot": {
+            "type": "boolean",
+            "description": "是否机器人"
+          },
+          "roomRobotIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "当前所在房间控制的机器人id列表(机器人玩家id)"
+          }
+        },
+        "required": [
+          "playerId",
+          "showName",
+          "customPlayerStatus",
+          "customPlayerProfile",
+          "networkState",
+          "isRobot"
+        ],
+        "description": "玩家信息"
+      },
+      "______tsgf_player_IPlayerInfo_ENetworkState": {
+        "type": "number",
+        "enum": [
+          0,
+          1
+        ],
+        "description": "网络状态"
+      },
+      "______tsgf_room_IRoomInfo_ITeamInfo": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "队伍 ID, 房间内唯一"
+          },
+          "name": {
+            "type": "string",
+            "description": "队伍名称"
+          },
+          "minPlayers": {
+            "type": "number",
+            "description": "队伍最小人数"
+          },
+          "maxPlayers": {
+            "type": "number",
+            "description": "队伍最大人数"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "minPlayers",
+          "maxPlayers"
+        ]
+      },
+      "______tsgf_room_IRoomInfo_EFrameSyncState": {
+        "type": "number",
+        "enum": [
+          0,
+          1
+        ],
+        "description": "帧同步状态"
+      },
+      "MsgNotifyChangeCustomPlayerStatus_MsgNotifyChangeCustomPlayerStatus": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/______tsgf_player_IPlayerInfo_IChangeCustomPlayerStatus"
+          },
+          {
+            "type": "object",
+            "properties": {}
+          }
+        ]
+      },
+      "______tsgf_player_IPlayerInfo_IChangeCustomPlayerStatus": {
+        "type": "object",
+        "properties": {
+          "changePlayerId": {
+            "type": "string"
+          },
+          "customPlayerStatus": {
+            "type": "number"
+          },
+          "oldCustomPlayerStatus": {
+            "type": "number"
+          },
+          "roomInfo": {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomInfo_IRoomInfo"
+          }
+        },
+        "required": [
+          "changePlayerId",
+          "customPlayerStatus",
+          "oldCustomPlayerStatus",
+          "roomInfo"
+        ],
+        "description": "玩家自定义状态的变更信息"
+      },
+      "MsgNotifyChangePlayerNetworkState_MsgNotifyChangePlayerNetworkState": {
+        "type": "object",
+        "properties": {
+          "roomInfo": {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomInfo_IRoomInfo"
+          },
+          "changePlayerId": {
+            "type": "string"
+          },
+          "networkState": {
+            "$ref": "#/components/schemas/______tsgf_player_IPlayerInfo_ENetworkState"
+          }
+        },
+        "required": [
+          "roomInfo",
+          "changePlayerId",
+          "networkState"
+        ]
+      },
+      "MsgNotifyChangePlayerTeam_MsgNotifyChangePlayerTeam": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/______tsgf_player_IPlayerInfo_IChangePlayerTeam"
+          },
+          {
+            "type": "object",
+            "properties": {}
+          }
+        ]
+      },
+      "______tsgf_player_IPlayerInfo_IChangePlayerTeam": {
+        "type": "object",
+        "properties": {
+          "changePlayerId": {
+            "type": "string"
+          },
+          "teamId": {
+            "type": "string"
+          },
+          "oldTeamId": {
+            "type": "string"
+          },
+          "roomInfo": {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomInfo_IRoomInfo"
+          }
+        },
+        "required": [
+          "changePlayerId",
+          "roomInfo"
+        ],
+        "description": "玩家队伍的变更信息"
+      },
+      "MsgNotifyChangeRoom_MsgNotifyChangeRoom": {
+        "type": "object",
+        "properties": {
+          "roomInfo": {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomInfo_IRoomInfo"
+          }
+        },
+        "required": [
+          "roomInfo"
+        ]
+      },
+      "MsgNotifyDismissRoom_MsgNotifyDismissRoom": {
+        "type": "object",
+        "properties": {
+          "roomInfo": {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomInfo_IRoomInfo"
+          }
+        },
+        "required": [
+          "roomInfo"
+        ]
+      },
+      "MsgNotifyJoinRoom_MsgNotifyJoinRoom": {
+        "type": "object",
+        "properties": {
+          "roomInfo": {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomInfo_IRoomInfo"
+          },
+          "joinPlayerId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "roomInfo",
+          "joinPlayerId"
+        ]
+      },
+      "MsgNotifyLeaveRoom_MsgNotifyLeaveRoom": {
+        "type": "object",
+        "properties": {
+          "leavePlayerInfo": {
+            "$ref": "#/components/schemas/______tsgf_player_IPlayerInfo_IPlayerInfo"
+          },
+          "roomInfo": {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomInfo_IRoomInfo"
+          }
+        },
+        "required": [
+          "leavePlayerInfo",
+          "roomInfo"
+        ]
+      },
+      "MsgNotifyRoomAllPlayersMatchResult_MsgNotifyRoomAllPlayersMatchResult": {
+        "type": "object",
+        "properties": {
+          "roomInfo": {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomInfo_IRoomInfo",
+            "description": "当前房间信息"
+          },
+          "errMsg": {
+            "type": "string",
+            "description": "如果匹配结果是失败的则有错误消息"
+          },
+          "errCode": {
+            "type": "number",
+            "description": "如果匹配结果是失败的则有错误码"
+          },
+          "matchResult": {
+            "$ref": "#/components/schemas/______tsgf_match_Models_IMatchPlayerResultWithServer",
+            "description": "匹配结果, 如果匹配是成功的，则不为空"
+          }
+        },
+        "required": [
+          "roomInfo"
+        ],
+        "description": "房间匹配请求有结果了"
+      },
+      "______tsgf_match_Models_IMatchPlayerResultWithServer": {
+        "type": "object",
+        "properties": {
+          "gameServerUrl": {
+            "type": "string",
+            "description": "房间所处的游戏服务器地址"
+          },
+          "roomId": {
+            "type": "string",
+            "description": "房间id"
+          },
+          "teamId": {
+            "type": "string",
+            "description": "应该加入的队伍id"
+          }
+        },
+        "required": [
+          "gameServerUrl",
+          "roomId"
+        ],
+        "description": "给单个玩家的匹配结果(包含要加入的服务器信息)"
+      },
+      "MsgNotifyRoomAllPlayersMatchStart_MsgNotifyRoomAllPlayersMatchStart": {
+        "type": "object",
+        "properties": {
+          "roomInfo": {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomInfo_IRoomInfo",
+            "description": "当前房间信息"
+          },
+          "matchReqId": {
+            "type": "string",
+            "description": "发起的匹配请求id, 可用于取消请求"
+          },
+          "reqPlayerId": {
+            "type": "string",
+            "description": "发起玩家id"
+          },
+          "matchParams": {
+            "$ref": "#/components/schemas/______tsgf_match_Models_IMatchParamsFromRoomAllPlayer",
+            "description": "发起的匹配参数"
+          }
+        },
+        "required": [
+          "roomInfo",
+          "matchReqId",
+          "reqPlayerId",
+          "matchParams"
+        ],
+        "description": "有玩家在房间中发起匹配请求"
+      },
+      "______tsgf_match_Models_IMatchParamsFromRoomAllPlayer": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/______tsgf_match_Models_IMatchParamsBase"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "matchFromType": {
+                "type": "string",
+                "enum": [
+                  "RoomAllPlayers"
+                ]
+              },
+              "matchFromInfo": {
+                "$ref": "#/components/schemas/______tsgf_match_Models_IMatchFromRoomAllPlayers",
+                "description": "匹配发起的附加信息"
+              }
+            },
+            "required": [
+              "matchFromType",
+              "matchFromInfo"
+            ]
+          }
+        ],
+        "description": "房间全玩家发起的匹配参数"
+      },
+      "______tsgf_match_Models_IMatchParamsBase": {
+        "type": "object",
+        "properties": {
+          "matchType": {
+            "type": "string",
+            "description": "匹配自定义类型, 只有相同的才会匹配在一起!"
+          },
+          "matcherKey": {
+            "type": "string",
+            "description": "匹配器标识(只有相同的才会匹配在一起)，内置的匹配器标识定义: MatcherKeys，也可以使用自定义的(服务器)匹配器"
+          },
+          "matcherParams": {
+            "type": "object",
+            "description": "匹配器参数，对应匹配器需要的额外配置"
+          },
+          "matchTimeoutSec": {
+            "type": "number",
+            "description": "匹配超时秒数, 0或者undefined则默认60秒"
+          },
+          "maxPlayers": {
+            "type": "number",
+            "description": "房间最大玩家数, 只有相同的才会匹配在一起, 如果有队伍, 则队伍的合计最大玩家数要和本值一致!"
+          },
+          "teamParams": {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomInfo_ITeamParams",
+            "description": "组队参数, 只有相同的才会匹配在一起, 是否需要取决于匹配器是否需要"
+          }
+        },
+        "required": [
+          "matcherKey",
+          "matcherParams",
+          "maxPlayers"
+        ],
+        "description": "匹配请求参数基础定义\r\n匹配器+最大玩家数+组队参数 全部一致才会匹配到一起"
+      },
+      "______tsgf_room_IRoomInfo_ITeamParams": {
+        "type": "object",
+        "properties": {
+          "fixedTeamCount": {
+            "type": "number",
+            "description": "[固定数量的队伍] 直接用数量自动生成所有固定队伍配置, 房间ID将从 '1' 开始到 fixedTeamCount,\n还需要传 fixedTeamMinPlayers 和 fixedTeamMaxPlayers, 或者使用 fixedTeamInfoList 完全自定义"
+          },
+          "fixedTeamMinPlayers": {
+            "type": "number",
+            "description": "[固定数量的队伍] 每支队伍最少玩家数(包含), 没传默认为1"
+          },
+          "fixedTeamMaxPlayers": {
+            "type": "number",
+            "description": "[固定数量的队伍] 每支队伍最大玩家数(包含), 没传默认为9"
+          },
+          "fixedTeamInfoList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/______tsgf_room_IRoomInfo_ITeamInfo"
+            },
+            "description": "[固定数量的队伍] 使用传入的队伍id等信息来定义所有队伍, 并忽略 fixedTeam* 的其他参数"
+          },
+          "freeTeamMinPlayers": {
+            "type": "number",
+            "description": "[自由数量的队伍] 指定每支队伍的最少玩家数, 同时还需要指定 freeTeamMaxPlayers"
+          },
+          "freeTeamMaxPlayers": {
+            "type": "number",
+            "description": "[自由数量的队伍] 指定每支队伍的最大玩家数, 同时还需要指定 freeTeamMinPlayers"
+          }
+        },
+        "description": "队伍的配置参数"
+      },
+      "______tsgf_match_Models_EMatchFromType": {
+        "type": "string",
+        "enum": [
+          "Player",
+          "RoomJoinUs",
+          "RoomAllPlayers"
+        ],
+        "description": "匹配类型"
+      },
+      "______tsgf_match_Models_IMatchFromRoomAllPlayers": {
+        "type": "object",
+        "properties": {},
+        "description": "来自房间所有玩家提交的配置信息"
+      },
+      "MsgNotifyRoomMsg_MsgNotifyRoomMsg": {
+        "type": "object",
+        "properties": {
+          "recvRoomMsg": {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomMsg_IRecvRoomMsg"
+          }
+        },
+        "required": [
+          "recvRoomMsg"
+        ]
+      },
+      "______tsgf_room_IRoomMsg_IRecvRoomMsg": {
+        "type": "object",
+        "properties": {
+          "fromPlayerInfo": {
+            "$ref": "#/components/schemas/______tsgf_player_IPlayerInfo_IPlayerInfo"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "recvType": {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomMsg_ERoomMsgRecvType"
+          }
+        },
+        "required": [
+          "fromPlayerInfo",
+          "msg",
+          "recvType"
+        ],
+        "description": "接收到的房间消息"
+      },
+      "______tsgf_room_IRoomMsg_ERoomMsgRecvType": {
+        "type": "number",
+        "enum": [
+          1,
+          2,
+          3
+        ],
+        "description": "房间消息接收类型"
+      },
+      "MsgNotifyStartFrameSync_MsgNotifyStartFrameSync": {
+        "type": "object",
+        "properties": {
+          "startPlayerId": {
+            "type": "string",
+            "description": "开始操作的玩家ID"
+          },
+          "roomInfo": {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomInfo_IRoomInfo",
+            "description": "当前房间信息"
+          }
+        },
+        "required": [
+          "startPlayerId",
+          "roomInfo"
+        ]
+      },
+      "MsgNotifyStopFrameSync_MsgNotifyStopFrameSync": {
+        "type": "object",
+        "properties": {
+          "stopPlayerId": {
+            "type": "string",
+            "description": "停止操作的玩家ID"
+          },
+          "roomInfo": {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomInfo_IRoomInfo",
+            "description": "当前房间信息"
+          }
+        },
+        "required": [
+          "stopPlayerId",
+          "roomInfo"
+        ]
+      },
+      "MsgNotifySyncFrame_MsgNotifySyncFrame": {
+        "type": "object",
+        "properties": {
+          "syncFrame": {
+            "$ref": "#/components/schemas/______tsgf_room_IGameFrame_IGameSyncFrame",
+            "description": "要同步的游戏帧数据"
+          },
+          "dt": {
+            "type": "number",
+            "description": "间隔上一帧过去的秒数"
+          }
+        },
+        "required": [
+          "syncFrame",
+          "dt"
+        ],
+        "description": "服务端广播给所有客户端的每帧数据"
+      },
+      "______tsgf_room_IGameFrame_IGameSyncFrame": {
+        "type": "object",
+        "properties": {
+          "frameIndex": {
+            "type": "number",
+            "description": "帧索引"
+          },
+          "playerInputs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/______tsgf_room_IGameFrame_IFramePlayerInput"
+            }
+          }
+        },
+        "required": [
+          "frameIndex"
+        ],
+        "additionalProperties": {
+          "type": "object",
+          "description": "可自行拓展其他字段"
+        },
+        "description": "游戏同步帧"
+      },
+      "______tsgf_room_IGameFrame_IFramePlayerInput": {
+        "type": "object",
+        "properties": {
+          "playerId": {
+            "type": "string",
+            "description": "来源的玩家ID"
+          },
+          "inputFrameType": {
+            "$ref": "#/components/schemas/______tsgf_room_IGameFrame_EPlayerInputFrameType",
+            "description": "输入帧类型"
+          },
+          "operates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/______tsgf_room_IGameFrame_IPlayerInputOperate"
+            },
+            "description": "玩家在本帧的操作列表. inputFrameType == EPlayerInputFrameType.Operates 有数据"
+          }
+        },
+        "required": [
+          "playerId",
+          "inputFrameType"
+        ],
+        "additionalProperties": {
+          "type": "object",
+          "description": "可自行拓展其他字段"
+        },
+        "description": "玩家输入(包含多个操作)"
+      },
+      "______tsgf_room_IGameFrame_EPlayerInputFrameType": {
+        "type": "number",
+        "enum": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "description": "玩家输入帧类型"
+      },
+      "______tsgf_room_IGameFrame_IPlayerInputOperate": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": {
+          "type": "object"
+        },
+        "description": "玩家输入的操作内容"
+      },
+      "MsgPlayerInpFrame_MsgPlayerInpFrame": {
+        "type": "object",
+        "properties": {
+          "operates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/______tsgf_room_IGameFrame_IPlayerInputOperate"
+            },
+            "description": "本帧本用户的操作列表"
+          },
+          "robotPlayerId": {
+            "type": "string",
+            "description": "可以指定是自己的机器人的指令"
+          }
+        },
+        "required": [
+          "operates"
+        ]
+      },
+      "MsgPlayerSendSyncState_MsgPlayerSendSyncState": {
+        "type": "object",
+        "properties": {
+          "stateData": {
+            "type": "object",
+            "description": "状态的数据"
+          },
+          "stateFrameIndex": {
+            "type": "number",
+            "description": "状态所在帧索引"
+          }
+        },
+        "required": [
+          "stateData",
+          "stateFrameIndex"
+        ],
+        "description": "玩家发送同步的状态数据"
+      },
+      "MsgRequirePlayerSyncState_MsgRequirePlayerSyncState": {
+        "type": "object",
+        "properties": {}
+      },
+      "PtlAuthorize_ReqAuthorize": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/______tsgf_player_IPlayerInfo_IPlayerInfoPara"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "playerToken": {
+                "type": "string",
+                "description": "玩家令牌,登录大厅时获得的"
+              }
+            },
+            "required": [
+              "playerToken"
+            ]
+          }
+        ],
+        "description": "玩家认证\r\n需要连接后立即发出请求,否则超时将被断开连接"
+      },
+      "______tsgf_player_IPlayerInfo_IPlayerInfoPara": {
+        "type": "object",
+        "properties": {
+          "showName": {
+            "type": "string",
+            "description": "玩家显示名(昵称), 没传默认使用服务端授权时传入的 showName"
+          },
+          "customPlayerStatus": {
+            "type": "number",
+            "description": "自定义玩家状态, 没传默认为 0"
+          },
+          "customPlayerProfile": {
+            "type": "string",
+            "description": "自定义玩家信息, 没传默认为 ''"
+          }
+        },
+        "description": "玩家信息参数"
+      },
+      "PtlAuthorize_ResAuthorize": {
+        "type": "object",
+        "properties": {
+          "playerInfo": {
+            "$ref": "#/components/schemas/______tsgf_player_IPlayerInfo_IPlayerInfo",
+            "description": "玩家ID"
+          }
+        },
+        "required": [
+          "playerInfo"
+        ]
+      },
+      "PtlCancelMatch_ReqCancelMatch": {
+        "type": "object",
+        "properties": {},
+        "description": "取消匹配请求\r\n可能发生并发,导致虽然请求成功了,但还是收到了成功结果的通知"
+      },
+      "PtlCancelMatch_ResCancelMatch": {
+        "type": "object",
+        "properties": {}
+      },
+      "PtlChangeCustomPlayerProfile_ReqChangeCustomPlayerProfile": {
+        "type": "object",
+        "properties": {
+          "customPlayerProfile": {
+            "type": "string"
+          },
+          "robotPlayerId": {
+            "type": "string",
+            "description": "可以指定自己的玩家机器人"
+          }
+        },
+        "required": [
+          "customPlayerProfile"
+        ],
+        "description": "修改玩家自定义属性\r\n修改后同房间内的所有玩家都将收到通知"
+      },
+      "PtlChangeCustomPlayerProfile_ResChangeCustomPlayerProfile": {
+        "type": "object",
+        "properties": {}
+      },
+      "PtlChangeCustomPlayerStatus_ReqChangeCustomPlayerStatus": {
+        "type": "object",
+        "properties": {
+          "customPlayerStatus": {
+            "type": "number"
+          },
+          "robotPlayerId": {
+            "type": "string",
+            "description": "可以指定自己的玩家机器人"
+          }
+        },
+        "required": [
+          "customPlayerStatus"
+        ],
+        "description": "修改玩家自定义状态\r\n修改后房间内(如果在的话)所有玩家(包含自己)会收到通知"
+      },
+      "PtlChangeCustomPlayerStatus_ResChangeCustomPlayerStatus": {
+        "type": "object",
+        "properties": {}
+      },
+      "PtlChangePlayerTeam_ReqChangePlayerTeam": {
+        "type": "object",
+        "properties": {
+          "newTeamId": {
+            "type": "string"
+          },
+          "robotPlayerId": {
+            "type": "string",
+            "description": "可以指定自己的玩家机器人"
+          }
+        }
+      },
+      "PtlChangePlayerTeam_ResChangePlayerTeam": {
+        "type": "object",
+        "properties": {
+          "roomInfo": {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomInfo_IRoomInfo"
+          }
+        },
+        "required": [
+          "roomInfo"
+        ]
+      },
+      "PtlChangeRoom_ReqChangeRoom": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomInfo_IChangeRoomPara"
+          },
+          {
+            "type": "object",
+            "properties": {}
+          }
+        ],
+        "description": "修改房间信息\r\n只有房主可以修改\r\n修改后房间内所有玩家都收到通知"
+      },
+      "______tsgf_room_IRoomInfo_IChangeRoomPara": {
+        "type": "object",
+        "properties": {
+          "roomName": {
+            "type": "string",
+            "description": "[不修改请不要赋值] 房间名称"
+          },
+          "ownerPlayerId": {
+            "type": "string",
+            "description": "[不修改请不要赋值] 房主玩家ID，创建后，只有房主玩家的客户端才可以调用相关的管理操作"
+          },
+          "isPrivate": {
+            "type": "boolean",
+            "description": "[不修改请不要赋值] 是否私有房间，即不参与匹配, 但可以通过房间ID加入"
+          },
+          "isForbidJoin": {
+            "type": "boolean",
+            "description": "[不修改请不要赋值] 是否不允许加人(任何方式都无法加入)"
+          },
+          "customProperties": {
+            "type": "string",
+            "description": "[不修改请不要赋值] 自定义房间属性字符串"
+          }
+        },
+        "description": "修改房间信息的参数"
+      },
+      "PtlChangeRoom_ResChangeRoom": {
+        "type": "object",
+        "properties": {
+          "roomInfo": {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomInfo_IRoomInfo",
+            "description": "房间信息"
+          }
+        },
+        "required": [
+          "roomInfo"
+        ]
+      },
+      "PtlCreateRoomRobot_ReqCreateRoomRobot": {
+        "type": "object",
+        "properties": {
+          "createPa": {
+            "$ref": "#/components/schemas/______tsgf_player_IPlayerInfo_IPlayerInfoPara"
+          },
+          "teamId": {
+            "type": "string",
+            "description": "同时指定加入的队伍ID"
+          }
+        },
+        "required": [
+          "createPa"
+        ]
+      },
+      "PtlCreateRoomRobot_ResCreateRoomRobot": {
+        "type": "object",
+        "properties": {
+          "robotInfo": {
+            "$ref": "#/components/schemas/______tsgf_player_IPlayerInfo_IPlayerInfo",
+            "description": "创建的机器人id"
+          }
+        },
+        "required": [
+          "robotInfo"
+        ]
+      },
+      "PtlDismissRoom_ReqDismissRoom": {
+        "type": "object",
+        "properties": {
+          "roomId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "roomId"
+        ],
+        "description": "解散房间"
+      },
+      "PtlDismissRoom_ResDismissRoom": {
+        "type": "object",
+        "properties": {
+          "roomInfo": {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomInfo_IRoomInfo"
+          }
+        },
+        "required": [
+          "roomInfo"
+        ]
+      },
+      "PtlJoinRoom_ReqJoinRoom": {
+        "type": "object",
+        "properties": {
+          "roomId": {
+            "type": "string"
+          },
+          "teamId": {
+            "type": "string",
+            "description": "同时指定加入的队伍ID"
+          }
+        },
+        "required": [
+          "roomId"
+        ],
+        "description": "加入房间"
+      },
+      "PtlJoinRoom_ResJoinRoom": {
+        "type": "object",
+        "properties": {
+          "roomInfo": {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomInfo_IRoomInfo"
+          }
+        },
+        "required": [
+          "roomInfo"
+        ]
+      },
+      "PtlLeaveRoom_ReqLeaveRoom": {
+        "type": "object",
+        "properties": {
+          "retainEmptyRoom": {
+            "type": "boolean",
+            "description": "保留空房间(默认为false),即离开后如果没人了是否保留本房间一段时间,用于后续再次进入,一般用于组队房间"
+          }
+        },
+        "description": "离开房间"
+      },
+      "PtlLeaveRoom_ResLeaveRoom": {
+        "type": "object",
+        "properties": {}
+      },
+      "PtlQueryMatch_ReqQueryMatch": {
+        "type": "object",
+        "properties": {},
+        "description": "查询完整匹配结果\r\n会等到有结果了才返回!\r\n注意: 同时只能只有一个玩家进行查询等待,一般使用通知来获取结果即可"
+      },
+      "PtlQueryMatch_ResQueryMatch": {
+        "type": "object",
+        "properties": {
+          "matchResult": {
+            "$ref": "#/components/schemas/______tsgf_match_Models_IMatchResult",
+            "description": "匹配结果, 同时房间中的对应玩家也会收到通知"
+          }
+        },
+        "required": [
+          "matchResult"
+        ]
+      },
+      "______tsgf_match_Models_IMatchResult": {
+        "type": "object",
+        "properties": {
+          "gameServerUrl": {
+            "type": "string",
+            "description": "房间所处的游戏服务器地址"
+          },
+          "roomId": {
+            "type": "string",
+            "description": "房间id"
+          },
+          "matchPlayerResults": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/______tsgf_match_Models_IMatchPlayerResult"
+            },
+            "description": "本次匹配中各个玩家对应的结果信息"
+          }
+        },
+        "required": [
+          "gameServerUrl",
+          "roomId",
+          "matchPlayerResults"
+        ],
+        "description": "匹配请求的匹配结果"
+      },
+      "______tsgf_match_Models_IMatchPlayerResult": {
+        "type": "object",
+        "properties": {
+          "playerId": {
+            "type": "string",
+            "description": "玩家id"
+          },
+          "teamId": {
+            "type": "string",
+            "description": "应该加入的队伍id"
+          }
+        },
+        "required": [
+          "playerId"
+        ],
+        "description": "匹配请求的单个玩家结果"
+      },
+      "PtlReconnect_ReqReconnect": {
+        "type": "object",
+        "properties": {
+          "playerToken": {
+            "type": "string",
+            "description": "之前连接上的连接ID"
+          }
+        },
+        "required": [
+          "playerToken"
+        ],
+        "description": "断线重连"
+      },
+      "PtlReconnect_ResReconnect": {
+        "type": "object",
+        "properties": {
+          "playerId": {
+            "type": "string",
+            "description": "当前玩家id"
+          },
+          "currRoomInfo": {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomInfo_IRoomInfo"
+          }
+        },
+        "required": [
+          "playerId"
+        ]
+      },
+      "PtlRequestAfterFrames_ReqRequestAfterFrames": {
+        "type": "object",
+        "properties": {
+          "startFrameIndex": {
+            "type": "number",
+            "description": "使用指定的帧索引开始追帧\n不传则默认按下面顺序优先选择:\n1. 使用服务端同步状态所在帧索引开始\n2. 如果没有同步状态则从头开始"
+          }
+        },
+        "description": "请求追帧"
+      },
+      "PtlRequestAfterFrames_ResRequestAfterFrames": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/______tsgf_room_IGameFrame_IAfterFrames"
+          },
+          {
+            "type": "object",
+            "properties": {}
+          }
+        ]
+      },
+      "______tsgf_room_IGameFrame_IAfterFrames": {
+        "type": "object",
+        "properties": {
+          "stateData": {
+            "type": "object",
+            "description": "状态同步的数据(如果没启用状态同步则可忽略)"
+          },
+          "stateFrameIndex": {
+            "type": "number",
+            "description": "状态同步所在帧索引, 即追帧的索引(afterFrames)从下一帧开始, 如果没启用状态同步则可忽略,同时值为-1"
+          },
+          "afterFrames": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/______tsgf_room_IGameFrame_IGameSyncFrame"
+            },
+            "description": "要追帧数组, 允许仅包含输入帧, 但要求顺序, 并且范围为[afterStartFrameIndex ~ afterEndFrameIndex]"
+          },
+          "afterStartFrameIndex": {
+            "type": "number",
+            "description": "追帧数组起始帧索引(包含)"
+          },
+          "afterEndFrameIndex": {
+            "type": "number",
+            "description": "追帧数组的截止帧索引(包含)"
+          },
+          "serverSyncFrameRate": {
+            "type": "number",
+            "description": "服务端同步帧率(每秒多少帧)"
+          }
+        },
+        "required": [
+          "stateData",
+          "stateFrameIndex",
+          "afterFrames",
+          "afterStartFrameIndex",
+          "afterEndFrameIndex",
+          "serverSyncFrameRate"
+        ],
+        "description": "追帧数据"
+      },
+      "PtlRequestFrames_ReqRequestFrames": {
+        "type": "object",
+        "properties": {
+          "beginFrameIndex": {
+            "type": "number",
+            "description": "起始帧索引(包含)"
+          },
+          "endFrameIndex": {
+            "type": "number",
+            "description": "结束帧索引(包含)"
+          }
+        },
+        "required": [
+          "beginFrameIndex",
+          "endFrameIndex"
+        ],
+        "description": "请求具体的帧数据"
+      },
+      "PtlRequestFrames_ResRequestFrames": {
+        "type": "object",
+        "properties": {
+          "frames": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/______tsgf_room_IGameFrame_IGameSyncFrame"
+            },
+            "description": "帧数组"
+          }
+        },
+        "required": [
+          "frames"
+        ]
+      },
+      "PtlRequestMatch_ReqRequestMatch": {
+        "type": "object",
+        "properties": {
+          "matchParams": {
+            "$ref": "#/components/schemas/______tsgf_match_Models_IMatchParamsFromRoomAllPlayer",
+            "description": "匹配参数"
+          }
+        },
+        "required": [
+          "matchParams"
+        ],
+        "description": "发起房间所有玩家匹配请求\r\n请求成功即返回,同时房间中的所有玩家会收到通知\r\n匹配有结果了还会收到消息通知, 并且可由一个玩家调用QueryMatch等待完整匹配结果"
+      },
+      "PtlRequestMatch_ResRequestMatch": {
+        "type": "object",
+        "properties": {
+          "matchReqId": {
+            "type": "string",
+            "description": "匹配请求id"
+          }
+        },
+        "required": [
+          "matchReqId"
+        ]
+      },
+      "PtlRoomRobotLeave_ReqRoomRobotLeave": {
+        "type": "object",
+        "properties": {
+          "robotPlayerId": {
+            "type": "string",
+            "description": "自己创建的机器人"
+          }
+        },
+        "required": [
+          "robotPlayerId"
+        ]
+      },
+      "PtlRoomRobotLeave_ResRoomRobotLeave": {
+        "type": "object",
+        "properties": {
+          "robotInfo": {
+            "$ref": "#/components/schemas/______tsgf_player_IPlayerInfo_IPlayerInfo"
+          }
+        },
+        "required": [
+          "robotInfo"
+        ]
+      },
+      "PtlSendRoomMsg_ReqSendRoomMsg": {
+        "type": "object",
+        "properties": {
+          "roomMsg": {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomMsg_IRoomMsg"
+          },
+          "robotPlayerId": {
+            "type": "string",
+            "description": "可以指定自己的玩家机器人"
+          }
+        },
+        "required": [
+          "roomMsg"
+        ],
+        "description": "发送房间消息"
+      },
+      "______tsgf_room_IRoomMsg_IRoomMsg": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomMsg_IRoomMsgOtherPlayers"
+          },
+          {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomMsg_IRoomMsgSomePlayers"
+          }
+        ],
+        "description": "房间消息"
+      },
+      "______tsgf_room_IRoomMsg_IRoomMsgOtherPlayers": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomMsg_IRoomMsgBase"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "recvType": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "enum": [
+                      1
+                    ]
+                  },
+                  {
+                    "type": "number",
+                    "enum": [
+                      2
+                    ]
+                  }
+                ],
+                "description": "消息的接收类型，决定能接收到的玩家范围"
+              }
+            },
+            "required": [
+              "recvType"
+            ]
+          }
+        ]
+      },
+      "______tsgf_room_IRoomMsg_IRoomMsgBase": {
+        "type": "object",
+        "properties": {
+          "msg": {
+            "type": "string",
+            "description": "自定义消息字符串"
+          },
+          "recvType": {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomMsg_ERoomMsgRecvType"
+          }
+        },
+        "required": [
+          "msg",
+          "recvType"
+        ]
+      },
+      "______tsgf_room_IRoomMsg_IRoomMsgSomePlayers": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/______tsgf_room_IRoomMsg_IRoomMsgBase"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "recvType": {
+                "type": "number",
+                "enum": [
+                  3
+                ]
+              },
+              "recvPlayerList": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "接收本条消息的玩家ID列表"
+              }
+            },
+            "required": [
+              "recvType",
+              "recvPlayerList"
+            ]
+          }
+        ]
+      },
+      "PtlSendRoomMsg_ResSendRoomMsg": {
+        "type": "object",
+        "properties": {}
+      },
+      "PtlStartFrameSync_ReqStartFrameSync": {
+        "type": "object",
+        "properties": {},
+        "description": "房间内开始帧同步"
+      },
+      "PtlStartFrameSync_ResStartFrameSync": {
+        "type": "object",
+        "properties": {}
+      },
+      "PtlStopFrameSync_ReqStopFrameSync": {
+        "type": "object",
+        "properties": {},
+        "description": "房间内停止帧同步"
+      },
+      "PtlStopFrameSync_ResStopFrameSync": {
+        "type": "object",
+        "properties": {}
+      },
+      "?bson_ObjectID": {
+        "type": "string"
+      },
+      "?bson_ObjectId": {
+        "type": "string"
+      },
+      "?mongodb_ObjectID": {
+        "type": "string"
+      },
+      "?mongodb_ObjectId": {
+        "type": "string"
+      }
+    },
+    "responses": {
+      "error": {
+        "description": "Error",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "title": "API 错误",
+              "description": "业务错误（ApiError）返回 HTTP 状态码 200，其它错误返回 HTTP 状态码 500",
+              "properties": {
+                "isSucc": {
+                  "type": "boolean",
+                  "enum": [
+                    false
+                  ],
+                  "default": false
+                },
+                "err": {
+                  "type": "object",
+                  "description": "TsrpcError",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "ApiError",
+                        "NetworkError",
+                        "ServerError",
+                        "ClientError"
+                      ]
+                    },
+                    "code": {
+                      "oneOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "integer"
+                        }
+                      ],
+                      "nullable": true
+                    }
+                  },
+                  "required": [
+                    "message",
+                    "type"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
